@@ -1,0 +1,90 @@
+/* Estilos para SweetAlert2 */
+.swal-confirm-btn {
+  background-color: #10b981 !important;
+  color: white !important;
+  padding: 0.75rem 2rem !important;
+  border-radius: 0.5rem !important;
+  font-weight: 600 !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  margin: 0.25rem !important;
+}
+
+.swal-confirm-btn:hover {
+  background-color: #059669 !important;
+  transform: translateY(-2px) !important;
+}
+
+.swal-cancel-btn {
+  background-color: #ef4444 !important;
+  color: white !important;
+  padding: 0.75rem 2rem !important;
+  border-radius: 0.5rem !important;
+  font-weight: 600 !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  margin: 0.25rem !important;
+}
+
+.swal-cancel-btn:hover {
+  background-color: #dc2626 !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Override de estilos de SweetAlert2 */
+.swal2-popup {
+  border-radius: 1rem !important;
+  padding: 2rem !important;
+}
+
+.swal2-title {
+  color: #1f2937 !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+}
+
+.swal2-html-container {
+  color: #6b7280 !important;
+  font-size: 1rem !important;
+}
+
+.swal2-icon {
+  border-width: 3px !important;
+}
+
+.swal2-success {
+  border-color: #10b981 !important;
+}
+
+.swal2-success [class^='swal2-success-line'] {
+  background-color: #10b981 !important;
+}
+
+.swal2-success .swal2-success-ring {
+  border-color: rgba(16, 185, 129, 0.3) !important;
+}
+
+.swal2-error {
+  border-color: #ef4444 !important;
+}
+
+.swal2-error [class^='swal2-x-mark-line'] {
+  background-color: #ef4444 !important;
+}
+
+.swal2-warning {
+  border-color: #f59e0b !important;
+  color: #f59e0b !important;
+}
+
+.swal2-info {
+  border-color: #3b82f6 !important;
+  color: #3b82f6 !important;
+}
+
+.swal2-question {
+  border-color: #8b5cf6 !important;
+  color: #8b5cf6 !important;
+}

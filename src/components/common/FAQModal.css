@@ -1,0 +1,276 @@
+/* Modal Overlay */
+.faq-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  padding: 1rem;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal Content */
+.faq-modal-content {
+  background: white;
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 600px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Modal Header */
+.faq-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.faq-modal-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.faq-modal-close {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--text-light);
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.faq-modal-close:hover {
+  background: var(--bg-light);
+  color: var(--primary-color);
+}
+
+/* Modal Body */
+.faq-modal-body {
+  overflow-y: auto;
+  padding: 1.5rem;
+  flex: 1;
+}
+
+/* FAQ List */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* FAQ Chat Item */
+.faq-chat-item {
+  border: 2px solid var(--border-color);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-chat-item:hover {
+  border-color: var(--primary-color);
+}
+
+.faq-chat-item.active {
+  border-color: var(--primary-color);
+  background: var(--bg-light);
+}
+
+/* FAQ Question Button */
+.faq-chat-question {
+  width: 100%;
+  padding: 1.25rem;
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  transition: background 0.2s ease;
+}
+
+.faq-chat-question:hover {
+  background: var(--bg-light);
+}
+
+.faq-chat-question span:first-child {
+  flex: 1;
+  padding-right: 1rem;
+}
+
+/* FAQ Icon */
+.faq-chat-icon {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  min-width: 30px;
+  text-align: center;
+}
+
+/* FAQ Answer */
+.faq-chat-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 1.25rem;
+}
+
+.faq-chat-item.active .faq-chat-answer {
+  max-height: 200px;
+  padding: 0 1.25rem 1.25rem;
+}
+
+.faq-chat-answer p {
+  margin: 0;
+  color: var(--text-light);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Modal Footer */
+.faq-modal-footer {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  border-radius: 0.75rem;
+  text-align: center;
+}
+
+.faq-footer-text {
+  color: white;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 1rem;
+}
+
+.faq-footer-whatsapp {
+  padding: 0.875rem 1.75rem;
+  background: white;
+  color: var(--primary-color);
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.faq-footer-whatsapp:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.4);
+}
+
+.faq-footer-whatsapp svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Scrollbar */
+.faq-modal-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.faq-modal-body::-webkit-scrollbar-track {
+  background: var(--bg-light);
+  border-radius: 4px;
+}
+
+.faq-modal-body::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+.faq-modal-body::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .faq-modal-content {
+    max-height: 90vh;
+    border-radius: 1rem 1rem 0 0;
+    margin-top: auto;
+  }
+
+  .faq-modal-header {
+    padding: 1.25rem;
+  }
+
+  .faq-modal-header h2 {
+    font-size: 1.25rem;
+  }
+
+  .faq-modal-body {
+    padding: 1rem;
+  }
+
+  .faq-chat-question {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .faq-chat-answer {
+    padding: 0 1rem;
+  }
+
+  .faq-chat-item.active .faq-chat-answer {
+    padding: 0 1rem 1rem;
+  }
+
+  .faq-modal-footer {
+    padding: 1.25rem;
+  }
+
+  .faq-footer-text {
+    font-size: 1rem;
+  }
+
+  .faq-footer-whatsapp {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}
